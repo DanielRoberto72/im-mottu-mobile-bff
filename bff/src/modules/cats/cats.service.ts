@@ -1,4 +1,4 @@
-import { CatsApiClient } from '@mottu/bff/external/the-cat-api/the-cat-api.client';
+import { CatsApiClient } from '../../external/the-cat-api/the-cat-api.client';
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
 
 @Injectable()

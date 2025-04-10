@@ -1,7 +1,7 @@
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { firstValueFrom } from 'rxjs';
-import { InMemoryCacheService } from 'src/shared/cache/in-memory-cache.service';
+import { InMemoryCacheService } from '../../shared/cache/in-memory-cache.service';
 
 @Injectable()
 export class RickAndMortyClient {

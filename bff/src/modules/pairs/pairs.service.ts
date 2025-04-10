@@ -1,7 +1,7 @@
-import { RickAndMortyClient } from '@mottu/bff/external/rick-and-morty-api/rick-and-morty-api.client';
-import { CatsApiClient } from '@mottu/bff/external/the-cat-api/the-cat-api.client';
-import { getRandomCharacter } from '@mottu/bff/utils/getRandomCharacter';
-import { getRandomPage } from '@mottu/bff/utils/getRandomPage';
+import { RickAndMortyClient } from '../../external/rick-and-morty-api/rick-and-morty-api.client';
+import { CatsApiClient } from '../../external/the-cat-api/the-cat-api.client';
+import { getRandomCharacter } from '../../utils/getRandomCharacter';
+import { getRandomPage } from '../../utils/getRandomPage';
 import {
   Injectable,
   InternalServerErrorException,
@@ -64,7 +64,7 @@ export class PairsService {
 
       if (!response.results || response.results.length === 0) {
         throw new NotFoundException(
-          `Não encontramos nenhum personagem com o "${characterName} ou semelhante`,
+          `Não encontramos nenhum personagem com o nome ${characterName} ou semelhante`,
         );
       }
 
