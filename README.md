@@ -8,7 +8,6 @@
    npm install
    ```
 
-
 2. **Execute a aplicação em modo desenvolvimento:**
 
    ```bash
@@ -19,18 +18,36 @@
 
 ---
 
+## 🚀 Como rodar com Docker
+
+1. **Crie a imagem Docker:**
+
+   ```bash
+   docker build -t mottuBff .
+   ```
+
+2. **Execute o container:**
+
+   ```bash
+   docker run -d -p 3002:3002 --name nome-do-container mottuBff
+   ```
+
 ## 🧩 Quais níveis foram implementados
 
-- Essa Branch conta com os requisitos propostos para a fase 2
+- Essa Branch conta com os requisitos propostos para a fase 3
+
+- Implementação do Dockerfile para execução da aplicação.
 
 ---
 
 ## 🧠 Decisões técnicas
 
-- Para a criação da rota /v1/pairs/search com os filtros de raça e nome do personal foram utilizados o class-validator e class-transformer para validações no dto. Além disso foi usado o validationPipe com o argumento forbidNonWhitelisted = true evitando a passagem de dados que não esperados.
+- Utilização de query params para realizar a paginação da rota v1/pairs
 
-- Para a criação da rota /v1/breeds utilizei o domínio cats pois é entendível que "breeds" faz parte do escopo de cats.
+- Para salvar os dados dos favoritos utilizei uma estratégia local de salvamento na memória.
 
-- Para a criação do cache, escolhi realizar uma estratégia local de cache, que permanece sendo utilizada pelo tempo determinado no TTL ou até quando a aplicação for reiniciada. Foi escolhido também criar um serviço de cache genérico, pois assim é possível reutilizar em ambas as chamadas de API públicas, permitindo uma dinamicidade maior para buscar os dados de cache.
+- Para a criação do Middleware global de tratamento de erros foi criado um filtro de exceção personalizado, pra interceptar e formatar os erros antes de serem enviados como resposta HTTP.
+
+- Para a criação do Dockerfile, utilizei o npm install --legacy-peer-deps para correção de um conflito de versão no nest/swagger.
 
 ---
