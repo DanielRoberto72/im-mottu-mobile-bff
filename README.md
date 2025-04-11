@@ -15,7 +15,7 @@
    npm run start:dev
    ```
 
-   A aplicação estará disponível por padrão em: [http://localhost:3002](http://localhost:3000)
+   A aplicação estará disponível por padrão em: [http://localhost:3002](http://localhost:3002)
 
 ---
 

@@ -12,10 +12,10 @@ export class CatsApiClient {
     private readonly cacheService: InMemoryCacheService,
   ) {}
 
-  async getCats(): Promise<any[]> {
+  async getCats(page: number): Promise<any[]> {
     try {
       const { data } = await firstValueFrom(
-        this.http.get(`${this.baseUrl}/images/search`),
+        this.http.get(`${this.baseUrl}/images/search?page=${page}`),
       );
 
       return data;

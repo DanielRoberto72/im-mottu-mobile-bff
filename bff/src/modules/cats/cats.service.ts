@@ -10,7 +10,10 @@ export class CatsService {
 
       return breeds;
     } catch (error) {
-      throw new InternalServerErrorException();
+      throw new InternalServerErrorException({
+        erro: 5001,
+        mensagem: 'Erro interno do Servidor',
+      });
     }
   }
 }

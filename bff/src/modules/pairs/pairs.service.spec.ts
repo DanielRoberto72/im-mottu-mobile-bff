@@ -58,7 +58,7 @@ describe('PairsService', () => {
       );
       (getRandomCharacter as jest.Mock).mockReturnValue(fakeCharacter);
 
-      const result = await service.getPairs();
+      const result = await service.getPairs(1);
 
       expect(result).toEqual({
         character: fakeCharacter,

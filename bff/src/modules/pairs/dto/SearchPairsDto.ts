@@ -1,9 +1,9 @@
 import { IsString } from 'class-validator';
 
 export class GetPairsParamsDto {
-  @IsString()
+  @IsString({ message: 'A propriedade characterName deve ser uma string' })
   characterName: string;
 
-  @IsString()
+  @IsString({ message: 'A propriedade catBreed deve ser uma string' })
   catBreed: string;
 }
